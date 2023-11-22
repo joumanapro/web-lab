@@ -1,16 +1,30 @@
-import java.sql.Date;
+package com.example.firstproject.dao;
+import java.io.Serializable;
+import java.util.Date;
 
-import javax.annotation.Generated;
-@Entity 
-@Tabel(name = "restaurant")
-public class Restaurant {
-    @Id   
-    @Generated(value = Generated.AUTO)
-    private Integer restaurant_id;
-    public Integer getRestaurant_id() {
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import javax.persistence.Entity;
+
+@Entity
+@Table(name = "Restaurant") 
+public class Restaurant implements Serializable{
+	
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) 
+    private Long restaurant_id;
+    
+    public Long getRestaurant_id() {
         return restaurant_id;
     }
-    public void setRestaurant_id(Integer restaurant_id) {
+    public void setRestaurant_id(Long restaurant_id) {
         this.restaurant_id = restaurant_id;
     }
     private String name;
@@ -63,7 +77,7 @@ public class Restaurant {
         this.cuisine_type = cuisine_type;
     }
     private String website_url;
-    public Restaurant(Integer restaurant_id, String name, String manager_name, String location, String contact_number,
+    public Restaurant(Long restaurant_id, String name, String manager_name, String location, String contact_number,
             String opening_hours, Date established_date, String cuisine_type, String website_url, Boolean is_vegetarian,
             Integer rating) {
         this.restaurant_id = restaurant_id;

@@ -1,7 +1,9 @@
-import com.example.firstproject.entity.Restaurant;
-import org.springframework.stereotype.Repository;
-@Repository 
+package com.example.firstproject.dao;
 
-public interface RestaurantDao extends CrudRepository <Restaurant, Integer>{
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository 
+public interface RestaurantDao extends JpaRepository<Restaurant, Long> {
     
 }
