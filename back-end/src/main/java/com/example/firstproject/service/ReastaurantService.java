@@ -16,6 +16,7 @@ public class ReastaurantService {
     @Autowired 
     private RestaurantDao  restaurantDao;
     
+    public 
     public  List<Restaurant> getRestaurant(){
     	
         List<Restaurant> restaurants = new ArrayList<>();
@@ -23,5 +24,21 @@ public class ReastaurantService {
         this.restaurantDao.findAll().forEach(restaurants::add);
         return restaurants;
     }
+    public Restaurant addRestaurant(Restaurant restaurant){
+         return restaurantDao.save(restaurant);
+    }
 
+    public Restaurant getRestaurant(long restaurant_id){
+        return restaurantDao.findById(restaurant_id) .orElsethrow();
+    }
+
+
+    public void deleteRestaurant(long restaurant_id){
+        restaurantDao.deleteById(restaurant_id);
+    }
+
+    public void updateRestaurant(Restaurant restaurant){
+         return restaurantDao.save(restaurant);
+        
+    }
 }

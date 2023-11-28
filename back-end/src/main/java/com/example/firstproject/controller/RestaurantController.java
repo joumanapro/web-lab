@@ -22,7 +22,21 @@ public class RestaurantController {
         return restaurantService.getRestaurant();
 
     }
+    //deletefunction 
+    @deleteMapping("/delete/restaurant/{id}"){
+    public void deleteRestaurant(@pathVariable long restaurant_id){
+        ReastaurantService.deleteRestaurant(restaurant_id);
+    }
+    }
     
+    @putMapping("/restaurant/{id}")
+    public Restaurant updateRestaurant(@pathVariable long id,@RequestBody Restaurant restaurant){
+           Restaurant.setRestaurant_id(id);
+           restaurantService.updateRestaurant(restaurant);
+    }
+
+
+
     @GetMapping("/")
 	public String message() {
 		return"---------Hello Spring Boot App------------";
