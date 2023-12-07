@@ -7,15 +7,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import jakarta.persistence.Column;
+
 import javax.persistence.Entity;
 
 @Entity
 @Table(name = "Restaurant") 
 public class Restaurant implements Serializable{
 	
-    /**
-	 * 
-	 */
+    
 	private static final long serialVersionUID = 1L;
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) 
@@ -27,13 +27,15 @@ public class Restaurant implements Serializable{
     public void setRestaurant_id(Long restaurant_id) {
         this.restaurant_id = restaurant_id;
     }
+    @Column(name="name")
     private String name;
-    public String getName() {
+    public  String getName() {
         return name;
     }
-    public void setName(String name) {
+    public  void setName(String name) {
         this.name = name;
     }
+     @Column(name="name")
     private String manager_name;
     public String getManager_name() {
         return manager_name;
@@ -41,6 +43,7 @@ public class Restaurant implements Serializable{
     public void setManager_name(String manager_name) {
         this.manager_name = manager_name;
     }
+     @Column(name="location")
     private String location;
     public String getLocation() {
         return location;
@@ -48,6 +51,7 @@ public class Restaurant implements Serializable{
     public void setLocation(String location) {
         this.location = location;
     }
+     @Column(name="contact_number")
     private String contact_number;
     public String getContact_number() {
         return contact_number;
@@ -55,6 +59,7 @@ public class Restaurant implements Serializable{
     public void setContact_number(String contact_number) {
         this.contact_number = contact_number;
     }
+     @Column(name="opening_hours")
     private String opening_hours;
     public String getOpening_hours() {
         return opening_hours;
@@ -62,6 +67,7 @@ public class Restaurant implements Serializable{
     public void setOpening_hours(String opening_hours) {
         this.opening_hours = opening_hours;
     }
+     @Column(name="established_date")
     private Date established_date;
     public Date getEstablished_date() {
         return established_date;
@@ -69,6 +75,7 @@ public class Restaurant implements Serializable{
     public void setEstablished_date(Date established_date) {
         this.established_date = established_date;
     }
+     @Column(name="cuisine_type")
     private String cuisine_type;
     public String getCuisine_type() {
         return cuisine_type;
@@ -76,6 +83,7 @@ public class Restaurant implements Serializable{
     public void setCuisine_type(String cuisine_type) {
         this.cuisine_type = cuisine_type;
     }
+     @Column(name="website_url")
     private String website_url;
     public Restaurant(Long restaurant_id, String name, String manager_name, String location, String contact_number,
             String opening_hours, Date established_date, String cuisine_type, String website_url, Boolean is_vegetarian,
@@ -100,6 +108,7 @@ public class Restaurant implements Serializable{
     public void setWebsite_url(String website_url) {
         this.website_url = website_url;
     }
+    @Column(name="is_vegetarian")
     private Boolean is_vegetarian;
     public Boolean getIs_vegetarian() {
         return is_vegetarian;
@@ -107,6 +116,7 @@ public class Restaurant implements Serializable{
     public void setIs_vegetarian(Boolean is_vegetarian) {
         this.is_vegetarian = is_vegetarian;
     }
+     @Column(name="rating")
     private Integer rating;
     public Integer getRating() {
         return rating;
